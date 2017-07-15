@@ -433,8 +433,7 @@ class RustBuild(object):
         try:
             ostype = subprocess.check_output(
                 ['uname', '-s']).strip().decode(default_encoding)
-            cputype = subprocess.check_output(
-                ['uname', '-m']).strip().decode(default_encoding)
+            cputype = 'i686'
         except (subprocess.CalledProcessError, OSError):
             if sys.platform == 'win32':
                 return 'x86_64-pc-windows-msvc'
